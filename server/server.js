@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
@@ -8,10 +9,10 @@ app.use(cors());
 const PORT = 5000;
 
 // Your NewsAPI key
-const NEWS_API_KEY = 'b62c4a0c741e49a185a2159782681758';
+const NEWS_API_KEY =process.env.NEWS_API_KEY;
 
 app.get('/news', async (req, res) => {
-  const { country = 'in', category = 'general', page = 1, pageSize = 15 } = req.query;
+  const { country = 'in', category = 'general', page = 1, pageSize = 15 } = req.query;  // fixed 'inc' -> 'in'
 
   const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&page=${page}&pageSize=${pageSize}&apiKey=${NEWS_API_KEY}`;
 

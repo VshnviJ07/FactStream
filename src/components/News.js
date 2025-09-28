@@ -34,7 +34,7 @@ const News = ({ country = 'in', pageSize = 8, category = 'general', setProgress 
           setTotalResults(data.totalResults || 0);
         } else if (tryFallback && currentCountry !== 'us') {
           // Fallback to US if IN returns 0 articles
-          setCurrentCountry('us');
+          setCurrentCountry('us');  // fixed from 'in' to 'us'
         } else {
           alert(`No articles found for ${currentCountry} / ${category}`);
           setArticles([]);
