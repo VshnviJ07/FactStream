@@ -1,5 +1,6 @@
 # NewsApp - FactStream
 
+<img src="Screenshot (270).png" alt="Factstream" width="600">
 A React news application that fetches top headlines from various categories and countries using a custom Node.js backend proxy server for the NewsAPI.
 
 ---
